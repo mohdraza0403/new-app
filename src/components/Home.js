@@ -1,20 +1,26 @@
-import "./page.css";
-// import { Parallax } from "parallax";
-import markus from "../images/markus.jpg";
-// import tech from "./images/tech.jpg";
-// import plant from "./images/plant.jpg";
-import { Parallax } from "react-scroll-parallax";
+import "./home.css";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import Sdata from "./Sdata.js";
 
-function Hello() {
+function Home() {
   return (
-      <div className="Page">
-          <Parallax strength={600} bgImage={markus}>
-              <div className="content">
-                  <div className="text-content">Normal</div>
+    <div className="home">
+      <ParallaxProvider>
+        <Parallax >
+        {Sdata.map((item) => (
+            <div key={item.id} className="content">
+              <div className="text-content">
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
               </div>
-          </Parallax>
+              <img src={item.img} alt={item.title} />
+            </div>
+          
+        ))}
+         </Parallax> 
+      </ParallaxProvider>
     </div>
   );
 }
 
-export default Hello;
+export default Home;
