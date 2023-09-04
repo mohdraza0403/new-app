@@ -1,0 +1,54 @@
+/* CommentSection.css */
+
+.comment-section {
+    /* border: 1px solid #ccc; */
+    padding-bottom: 200px;
+    /* margin-top: px; */
+}
+
+.comments {
+    max-height: 400px;
+    /* Limit the height of the comments to provide a scrollable area */
+    overflow-y: auto;
+    /* Add vertical scrollbar if needed */
+}
+
+.comment {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.add-comment {
+    /* margin-bottom: 50rem; */
+    display: flex;
+    /* justify-content: space-evenly; */
+    width: 50vw;
+    gap: 10px;
+    height: 50px;
+    align-items: center ;
+    margin-left: 3rem;
+}
+
+textarea {
+    width: 40%;
+    height: 50px;
+    padding: 5px;   
+    resize: vertical;
+    /* Allow vertical resizing of the textarea */
+}
+
+button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Button background color on hover */
+}

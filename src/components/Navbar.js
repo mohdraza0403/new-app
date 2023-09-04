@@ -1,37 +1,35 @@
-import { useRef } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import "./navbar.css";
 
-function Navbar() {
-	const navRef = useRef();
+import React, { useState } from "react";
 
-	const showNavbar = () => {
-		navRef.current.classList.toggle(
-			"responsive_nav"
-		);
-	};
+import "./Navbar.css";
+import { Link, NavLink } from "react-router-dom";
 
-	return (
-		<header>
-			<h3>LOGO</h3>
-			<nav ref={navRef}>
-				<a href="/#">Home</a>
-				<a href="/#">Register</a>
-				<a href="/#">Login</a>
-				<a href="/#">About me</a>
-				<button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>
-			</nav>
-			<button
-				className="nav-btn"
-				onClick={showNavbar}>
-				<FaBars />
-			</button>
-		</header>
-	);
-}
+export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <nav>
+      <Link to="/" className="title">
+        Logo
+      </Link>
+      <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul className={menuOpen ? "open" : ""}>
+        <li>
+          <NavLink to="/about">Register</NavLink>
+        </li>
+        <li>
+          <NavLink to="/services">Login</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact">About us</NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
 export default Navbar;
