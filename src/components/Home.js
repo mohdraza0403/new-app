@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import "./home.css";
-import { Parallax } from "react-parallax";
+import "./Home.css";
+import {  Parallax } from "react-parallax";
 import Sdata from "./Sdata";
 import CommentSection from './CommentSection'; 
 
@@ -35,30 +35,44 @@ function Home() {
   return (
     <div className="Home">
       {Sdata.map((item, index) => (
-        <Parallax key={index} strength={600} bgImage={item.img}  >
+        <Parallax key={index} strength={600} bgImage={item.img}>
           <div className="content">
-            <h2 className="title">{item.title}</h2>
-            <p className="desc">{item.desc} <button className='btn'>Read more</button> </p>
-                 
+            <div className="cont">
+              <div className="heading2">
+                <h2 className="title">{item.title}</h2>
+              </div>
+
+              <div className="para2">
+                <p className="desc">
+                  {item.desc}
+                  <button className="btn">Read more</button>{" "}
+                </p>
+              </div>
+            </div>
+
             <div className="icons">
               <h1 className="like">
                 <i
-                  className={`fa-solid fa-heart ${likedItems.includes(index) ? 'liked' : ''}`}
-                  onClick={() => toggleLike(index)}
-                ></i>
+                  className={`fa-solid fa-heart ${
+                    likedItems.includes(index) ? "liked" : ""
+                  }`}
+                  onClick={() => toggleLike(index)}></i>
               </h1>
               <h1 className="cmt">
                 <i
                   className="fa-regular fa-comment"
-                  onClick={() => toggleCommentVisibility(index)}
-                ></i>
+                  onClick={() => toggleCommentVisibility(index)}></i>
               </h1>
-              <h1 className="share"><i className="fa-solid fa-share"></i></h1>
-              <h1 className="save"><i className="fa-solid fa-bookmark"></i></h1>
+              <h1 className="share">
+                <i className="fa-solid fa-share"></i>
+              </h1>
+              <h1 className="save">
+                <i className="fa-solid fa-bookmark"></i>
+              </h1>
             </div>
             {showComments[index] && (
               <CommentSection
-                comments={[]} // Pass comments for this item here
+                comments={[]} 
                 onAddComment={(comment) => addComment(index, comment)}
               />
             )}
@@ -70,9 +84,5 @@ function Home() {
 }
 
 export default Home;
-
-
-
-
 
 
