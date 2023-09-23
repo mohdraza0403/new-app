@@ -1,0 +1,40 @@
+{
+  "theme_color" : "#000000",
+  "background_color" : "#000000",
+  "display" : "standalone",
+  "scope" : "/",
+  "start_url" : "/",
+  "name" : "My Word",
+  "short_name" : "My Word", 
+  
+  "icons": [
+    {
+      "src": "maskable.png",
+      "sizes": "196x196",
+      "type":"image/png",
+      "purpose": "any maskable"
+    },
+   
+    {
+      "src": "logo192.png",
+      "sizes": "383x384",
+      "type": "image/png"
+    },
+    {
+      "src": "logo256.png",
+      "sizes": "383x384",
+      "type": "image/png"
+    },
+    {
+      "src": "logo384.png",
+      "sizes": "383x384",
+      "type": "image/png"
+    },
+    {
+      "src": "logo512.png",
+      "sizes": "383x384",
+      "type": "image/png"
+    }
+  ]
+ 
+}

@@ -35,7 +35,7 @@ function Home() {
   return (
     <div className="Home">
       {Sdata.map((item, index) => (
-        <Parallax key={index} strength={600} bgImage={item.img}>
+        <Parallax key={index} strength={300} bgImage={item.img}>
           <div className="content">
             <div className="cont">
               <div className="heading2">
